@@ -6,13 +6,13 @@ The project currently includes a fixed size Arena Allocator and fixed size Pool 
 The goal of this project is to explore and understand memory allocation and what changes and optimisation must be undertaken to increase speed of said allocators.
 
 Features:
-    -   Slot sized determined via SlotSize enum exposed on type creation.
-    -   Placement new object construction.
-    -   When constructed with a slot size of 64 or less the allocator is aligned to 64 as to increase cache friendliness.
-    -   Clean overflow handling by returning nullptr.
-    -   Google unit tests for both ArenaFast and Pool.
-    -   Google Benchmark Tests for both ArenaFast and Pool.
-    -   CMake based setup.
+- Slot sized determined via SlotSize enum exposed on type creation.
+- Placement new object construction.
+- When constructed with a slot size of 64 or less the allocator is aligned to 64 as to increase cache friendliness.
+- Clean overflow handling by returning nullptr.
+- Google unit tests for both ArenaFast and Pool.
+- Google Benchmark Tests for both ArenaFast and Pool.
+- CMake based setup.
 
 ## Allocators:
 
