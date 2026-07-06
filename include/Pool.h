@@ -50,6 +50,7 @@ public:
         static_assert(alignof(T) <= poolAlignment, "Items needs stronger alignment than pool provides");
         static_assert(std::is_trivially_destructible_v<T>, "Item needs to be trivially destructible");
 
+        if(slotsLeft <= 0)  return nullptr;
         std::byte* nextHead = *reinterpret_cast<std::byte**>(currentHead);
 
         T* ptr = new (currentHead) T(std::forward<Args>(args)...);
