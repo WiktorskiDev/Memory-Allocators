@@ -1,3 +1,6 @@
+# Memory Allocators
+
+[![CMake CI](https://github.com/WiktorskiDev/memory-allocators/actions/workflows/ci.yml/badge.svg)](https://github.com/WiktorskiDev/memory-allocators/actions/workflows/ci.yml)
 
 A small C++17 project implementing custom bump/arena and pool memory allocators.
 
@@ -60,7 +63,13 @@ int* ptr = pool.create<int>(100);
 pool.destroy<int>(ptr);
 ```
 
+## Build and test
 
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+ctest --test-dir build --output-on-failure
+```
 
 ## Tests
 
@@ -143,5 +152,4 @@ Results are synthetic and mainly useful for comparing allocator changes inside t
 
 - Add more realistic benchmark workloads.
 - Improve documentation of allocator internals.
-- Add CI for automated test runs.
 - Use the allocators in a future order book / matching engine project.
