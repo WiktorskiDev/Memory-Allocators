@@ -9,6 +9,8 @@ project(
 
 include(FetchContent)
 
+include(GoogleTest)
+
 FetchContent_Declare(
     googleBench
     URL https://github.com/google/benchmark/archive/refs/tags/v1.9.5.zip
@@ -52,9 +54,15 @@ add_executable(memory_manager_test
     include/Pool.h
 )
 
+
+enable_testing()
+
+gtest_discover_tests(memory_manager_test)
+
 target_link_libraries(memory_manager_benchmark benchmark::benchmark)
 
 target_link_libraries(memory_manager_test GTest::gtest_main)
+
 
 target_include_directories(memory_manager
     PRIVATE
