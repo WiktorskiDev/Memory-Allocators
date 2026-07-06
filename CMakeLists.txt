@@ -32,7 +32,6 @@ add_executable(memory_manager
     src/main.cpp
     src/MemoryController.cpp
 
-    include/Arena.h
     include/ArenaFast.h
     include/Slots.h
     include/Pool.h
